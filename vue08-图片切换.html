@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>vue图片切换</title>
+        <style>
+            img{
+                height: 300px;
+                width: 400px;
+            }
+        </style>
+	</head>
+	<body>
+		<div id="app">
+			<img :src="imgArr[index]" alt="" />
+			<button v-show="index!=0"><a href="#" @click="sub">上一张</a></button>
+			<button v-show="index<imgArr.length-1"><a href="#" @click="next">下一张</a></button>
+		</div>
+	</body>
+	<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				imgArr: ["img/1.jpg","img/2.jpg","img/3.jpg"],
+				index: 0,
+                leftIsShow:false,
+                rightIsShow:true
+			},
+			methods: {
+				changeImg() {
+
+                },
+				// 上一张
+				sub() {
+					this.index--
+				},
+				// 下一张
+				next() {
+					this.index++
+				},
+			},
+		})
+	</script>
+</html>

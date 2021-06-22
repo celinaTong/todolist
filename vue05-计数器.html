@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 实现计数器</title>
+    <style>
+        html{
+            font-size: 0px;
+        }
+        input{
+            width: 90px;
+            height: 50px;
+            background-color: rgb(206, 200, 200);
+            border: none;
+            font-size: 22px;
+            color: rgb(146, 9, 9);
+        }
+        .btn_left{
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .btn_right{
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        span{
+            width: 110px;
+            height: 48px;
+            line-height: 50px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="-" @click="reduce" class="btn_left">
+        <span><strong>{{ value }}</strong></span>
+        <input type="button" value="+" @click="add" class="btn_right">
+    </div>
+</body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            value:0
+        },
+        methods:{
+            // 减少
+            reduce(){
+                if (this.value<=0) {
+                    alert('已经达到最小值')
+                    return
+                }
+                this.value--
+            },
+            // 添加
+            add(){
+                if (this.value>=10) {
+                    alert('已经达到最大值')
+                    return
+                }
+              this.value++
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,62 @@
+body{
+    background-color: #ccc;
+}
+#todolist{
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+}
+input{
+    font-size: 14px;
+    text-indent: 5px;
+}
+.header{
+    text-align: center;
+}
+.main{
+    width: 305px;
+    margin: 0 auto;
+}
+.new_todo{
+    height: 35px;
+    width: 300px;
+    background-color: rgb(245, 242, 242);
+    border: 1px solid #ccc;
+}
+.footer{
+    margin: 0 auto;
+    height: 30px;
+    width: 303px;
+    line-height: 30px;
+    font-size: 12px;
+    background-color: rgb(245, 242, 242);
+    border: 1px solid #ccc;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+li{
+    height: 35px;
+    width: 303px;
+    background-color: rgb(245, 242, 242);
+    border: 1px solid #ccc;
+}
+ul{
+    padding-left: 0px;
+    margin: 0px;
+}
+ul li{
+    list-style-type: none;
+    line-height: 35px;
+    font-size: 14px;
+    text-indent: 5px;
+}
+.clear{
+    float: right;
+}
+span{
+    margin-left: 5px;
+}
+a{
+    text-decoration: none;
+    margin-right: 10px;
+}
