@@ -54,7 +54,9 @@ ul li{
     float: right;
 }
 span{
-    margin-left: 5px;
+    /* margin-left: 5px; */
+    float: right;
+    color: rgb(18, 18, 230);
 }
 a{
     text-decoration: none;
@@ -63,4 +65,15 @@ a{
 svg{
     float: right;
     line-height: 30px;
+}
+#head{
+    margin: 15px 0px 10px 0px;
+}
+h5{
+    display: inline;
+}
+#check{
+    height: 20px;
+    width: 20px;
+    color: navy;
 }
