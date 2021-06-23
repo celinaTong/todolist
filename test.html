@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in arr" :key="item.name">
+					<input type="checkbox" name="" id="" @click="del(index)" :checked="item.checked"/> 
+                    {{ item.name }}
+				</li>
+			</ul>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el: '#app',
+				data: {
+					arr: [
+						{
+							name: '张三',
+							checked: false,
+						},
+                        {
+							name: '李四',
+							checked: false,
+						},
+                        {
+							name: '王五',
+							checked: false,
+						},
+					],
+                    check:false
+				},
+                methods:{
+                    del(index){
+                        this.arr.splice(index,1)
+                    }
+                }
+			})
+		</script>
+	</body>
+</html>
