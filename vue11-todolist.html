@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>小黑记事本</title>
+		<title>todolist</title>
 		<link rel="stylesheet" href="style/index.css" />
 	</head>
 	<body>
@@ -15,7 +15,7 @@
                 <h1>记事本</h1>
                 <input
                 type="text"
-                autofocus
+                autofocus   
                 autocomplete="off"
                 placeholder="请输入任务"
                 class="new_todo"
@@ -26,8 +26,9 @@
 			<!-- 列表区域 -->
 			<section class="main" v-show="isShow">
                 <ul>
-                    <li v-for="(item,index) in arr">
+                    <li v-for="(item,index) in arr" @mouseover="mouseOver(index)" @mouseleave="mouseLeave(index)">
                         {{ index + 1 + '. '}} {{ item}}
+                        <span v-show="isChecked == index + 1 ? isIconShow : false" @click="remove"><svg t="1624355982144" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1214" width="30" height="30"><path d="M512 1255.489906" p-id="1215" fill="#cdcdcd"></path><path d="M718.519288 688.227064 543.827304 513.637418l174.180292-174.180292c8.801119-8.801119 8.801119-23.128523 0-31.827304-8.801119-8.801119-23.128523-8.801119-31.827304 0L512 481.810114 337.819708 307.629822c-8.801119-8.801119-23.230861-8.596442-31.929642 0.102339l0.102339-0.102339c-8.801119 8.801119-8.698781 23.026184 0.102339 31.827304l174.180292 174.180292L305.58305 688.227064c-8.801119 8.801119-8.801119 23.128523 0 31.827304 8.801119 8.801119 23.128523 8.801119 31.827304 0L512 545.464721 686.691985 720.054367c8.801119 8.801119 22.923846 8.903458 31.724965 0.102339l0.102339-0.102339C727.218069 711.355587 727.218069 697.028183 718.519288 688.227064z" p-id="1216" fill="#cdcdcd"></path></svg></span>
                     </li>
                 </ul>
             </section>
@@ -46,7 +47,9 @@
 				arr: [],
 				index: 0,
                 message:'',
-                isShow:false
+                isShow:false,
+                isIconShow:false,
+                isChecked:0
 			},
             methods:{
                 add(){
@@ -54,12 +57,28 @@
                     this.arr.push(this.message)
                     // 显示列表
                     this.isShow = true
+                    // 清空输入框
+                    this.message = ''
                 },
                 // 清除所有
                 clear(){
                     this.arr.length = 0
                     // 隐藏列表
                     this.isShow = false
+                },
+                // 鼠标移入
+                mouseOver(index){
+                    this.isChecked = index + 1
+                    this.isIconShow = true
+                },
+                // 鼠标移出
+                mouseLeave(index){
+                    this.isChecked = index + 1
+                    this.isIconShow = false
+                },
+                // 删除数组数据
+                remove(index){
+                    this.arr.splice(index,1)
                 }
             }
 		})
