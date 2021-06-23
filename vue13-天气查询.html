@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/vue13-天气查询.css">
+    <title>天气查询</title>
+</head>
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- 整体内容 -->
+    <div id="content">
+        <!-- title -->
+        <h3>天气查询</h3>
+        <!-- 搜索区域 -->
+        <div id="search">
+            <input type="text" v-model="city" placeholder="请输入搜索关键字" autofocus @keyup.enter="search">
+            <button id="btn_search" @click="search">搜索</button>
+        </div>
+        <!-- 固定城市区域 -->
+        <div class="city">
+            <a @click="changeCity('北京')">北京</a>
+            <a @click="changeCity('上海')">上海</a>
+            <a @click="changeCity('广州')">广州</a>
+            <a @click="changeCity('深圳')">深圳</a>
+        </div>
+        <!-- 数据显示区域 -->
+        <div class="contentList">
+            <ul>
+                <li v-for="item in forecast">
+                    <div class="info_type"><span>{{ item.type }}</span></div>
+                    <div class="info_temp">
+                        <strong>{{ item.low }}</strong> ~
+                        <strong>{{ item.high }}</strong>
+                    </div>
+                    <div class="info_date"><span>{{ item.date }}</span></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="js/vue13-天气查询.js"></script>
+</html>

@@ -1,0 +1,76 @@
+html{
+    margin: 0px;
+    padding: 0px;
+}
+#content{
+    height: 200px;
+}
+h3{
+    color: royalblue;
+    text-align: center;
+}
+input{
+    width: 500px;
+    text-indent: 5px;
+    height: 40px;
+    line-height: 35px;
+    border: 1px solid rgb(135, 169, 243);
+    /* 输入框选中的颜色 */
+    outline-color: skyblue;
+    vertical-align: middle;
+}
+/* 去除按钮与输入框之间的间隙 ： 设置父元素的 font-size : 0px */
+#search{
+    font-size: 0px;
+    text-align: center;
+}
+#btn_search{
+    height: 44px;
+    width: 80px;
+    background-color: rgb(89, 146, 231);
+    text-align: center;
+    color: #fff;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.contentList{
+    display: flex;
+}
+/* 居中显示 前提是父元素 .contentList 中 设置  display: flex; */
+.contentList ul{
+    margin: 0 auto;
+}
+.contentList li{
+    list-style-type: none;
+    float: left;
+    margin-right: 20px;
+}
+.city{
+    width: 585px;
+    margin: 0 auto;
+}
+.city a{
+    margin-right: 15px;
+    font-size: 14px;
+    cursor:pointer;
+}
+.info_type{
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    color: tan;
+    margin-top: 40px;
+}
+.info_temp{
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: tan;
+}
+.info_date{
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: rgb(73, 72, 70);
+}
